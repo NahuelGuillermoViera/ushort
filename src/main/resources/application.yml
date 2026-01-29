@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ushort
+  h2:
+    console.enabled: true
+  datasource:
+    url: ${DB_URL}
+    driver-class-name: ${DB_DRIVER}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    spring.jpa.database-platform: ${DB_DIALECT}
+
