@@ -10,4 +10,4 @@ spring:
     password: ${DB_PASSWORD}
   jpa:
     spring.jpa.database-platform: ${DB_DIALECT}
-
+    show-sql: ${SHOW_SQL}

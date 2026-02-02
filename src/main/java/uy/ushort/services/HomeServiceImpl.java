@@ -2,6 +2,7 @@ package uy.ushort.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import uy.ushort.data.LargeURLResponse;
 import uy.ushort.data.LinkRequest;
 import uy.ushort.data.LinkResponse;
 import uy.ushort.models.Link;
@@ -37,11 +38,13 @@ public class HomeServiceImpl implements IHomeService{
     }
 
     @Override
-    public String getLargeURL(String path) {
+    public LargeURLResponse getLargeURL(String path) {
         Link link = linkRepository.findByShortPath(path).orElseThrow(() ->
                 new RuntimeException("Link no encontrado")
         );
-        return link.getLongLink();
+        incrementClicks(link);
+
+        return new LargeURLResponse(link.getLongLink());
     }
 
     public LinkResponse create(LinkRequest url) {
@@ -76,5 +79,10 @@ public class HomeServiceImpl implements IHomeService{
         }
 
         return result;
+    }
+
+    private void incrementClicks(Link link) {
+        link.incrementClicks();
+        linkRepository.save(link);
     }
 }

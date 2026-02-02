@@ -18,4 +18,8 @@ public class Link {
     @Column(unique = true)
     private String shortPath;
     private int clicks;
+
+    public void incrementClicks(){
+        this.clicks += 1;
+    }
 }
