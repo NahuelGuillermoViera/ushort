@@ -1,8 +1,6 @@
 spring:
   application:
     name: ushort
-  h2:
-    console.enabled: true
   datasource:
     url: ${DB_URL}
     driver-class-name: ${DB_DRIVER}
@@ -11,3 +9,5 @@ spring:
   jpa:
     spring.jpa.database-platform: ${DB_DIALECT}
     show-sql: ${SHOW_SQL}
+    hibernate:
+      ddl-auto: update
