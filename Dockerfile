@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM --platform=linux/amd64 eclipse-temurin:17-jdk AS builder
+FROM eclipse-temurin:17-jdk AS builder
 
 # Set the working directory
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY . .
 RUN ./gradlew clean build -x test
 
 # Stage 2: Run the application
-FROM --platform=linux/amd64 eclipse-temurin:17-jre
+FROM eclipse-temurin:17-jre
 
 # Set the working directory
 WORKDIR /app
