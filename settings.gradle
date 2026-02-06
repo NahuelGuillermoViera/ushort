@@ -1,11 +1,11 @@
-rootProject.name = 'ushort'
-
 pluginManagement {
     repositories {
         gradlePluginPortal()
         mavenCentral()
     }
 }
+
+rootProject.name = 'ushort'
 
 toolchainManagement {
     jvm {
