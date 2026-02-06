@@ -8,6 +8,12 @@ group = 'uy'
 version = '0.0.1-SNAPSHOT'
 description = 'ushort'
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
