@@ -11,7 +11,6 @@ import uy.ushort.services.IHomeService;
 import java.net.URI;
 
 @RestController
-@CrossOrigin(origins = "https://ushort-ushort-client.onrender.com")
 public class HomeController {
     @Autowired
     private IHomeService homeService;
