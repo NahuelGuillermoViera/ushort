@@ -11,6 +11,7 @@ description = 'ushort'
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
+        vendor = JvmVendorSpec.ANY
     }
 }
 

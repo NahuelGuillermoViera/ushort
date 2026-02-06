@@ -1,1 +1,18 @@
 rootProject.name = 'ushort'
+
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
+
+toolchainManagement {
+    jvm {
+        javaRepositories {
+            repository("adoptium") {
+                resolverClass = org.gradle.jvm.toolchain.internal.install.AdoptiumResolver
+            }
+        }
+    }
+}
